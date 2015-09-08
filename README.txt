@@ -10,6 +10,16 @@ Each path choice contains a current position, an adjacent(connected/child) path,
 and ends at node number 23. The node numbers range all the way to 27. I will make sure to include a picture of this node layout so it makes more sense. The
 farther in the maze the program goes, the higher the node numbers go. In my encoding I am assuming the walls are in place and it knows the correct way to move to get to the next node. This way I efficiently searched through the array for increasing node numbers, cutting out the need for movement functions. In order to successfully get through the maze I had a queue set up to make up the path choices. Each path choice had to be linked to an adjacent node number.
 
+Encoding of the maze space with node array:
+int nodes[34][3] = 
+  {
+    {0,1,00},{0,2,00},{2,3,4},{4,2,7},{4,2,5},{5,4,6},{5,7,6},{7,4,8},{7,5,8},{7,8,9},{9,7,8},
+    {11,9,10},{10,9,00},{11,9,12},{12,11,13},{13,12,14},{00,12,13},{14,15,16},{12,14,16},{00,14,15},
+    {16,14,17},{17,16,18},{18,17,20},{18,19,20},{18,19,25},{21,18,20},{22,20,21},{23,00,22},
+    {24,25,00},{25,24,26},{25,24,27},{26,27,25},{27,26,00},{27,25,00}
+  };
+
+
 My Algorith--
 
 I used a breadth first search approach with searching the array for an increasing larger node number indicating forward or backtracing movement, all while
